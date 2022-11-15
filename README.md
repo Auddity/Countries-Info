@@ -5,13 +5,13 @@ This project is in production.
 Latest Update: 11/14/2022
 
 ## Update Details
+- Created Slices
 - Router Imports
 - Component Files
 - Template Clean Up
+- Router Setup
 
 ## Future Updates
-- Router Setup
-- Redux Setup
 - Header Component
 - Form Component
 - Main Component <Home />
@@ -30,6 +30,6 @@ Users will be able to:
 - Toggle light and dark theme
 
 ## Misc Build Notes
-Building with ReacJS
-Redux Toolkit
+Building with ReacJS,
+Redux Toolkit,
 Router v6
