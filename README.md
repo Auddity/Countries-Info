@@ -5,6 +5,8 @@ This project is in production.
 Latest Update: 11/14/2022
 
 ## Update Details
+- Router Imports
+- Component Files
 - Template Clean Up
 
 ## Future Updates
