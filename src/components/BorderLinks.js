@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 const BorderLinks = () => {
   return (
-    <div>BorderLinks</div>
-  )
-}
+    <div>
+      Borderlinks
+    </div>
+  );
+};
 
-export default BorderLinks
+export default BorderLinks;
