@@ -2,13 +2,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 1rem;
-  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
+  padding-block: 3rem;
 
   &-title {
     font-size: 1.8rem;
   }
 
   &-theme-toggle {
+    display: flex;
+    align-items: center;
+
+    .icon-container {
+      transform: translateY(0.2rem);
+    }
+
+    p {
+      font-size: 1.4rem;
+      margin-inline-start: 1rem;
+    }
   }
 }
