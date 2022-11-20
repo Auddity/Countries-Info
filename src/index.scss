@@ -1,10 +1,9 @@
+@use './sass/abstracts/variables' as v;
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
 }
 
 html {
@@ -14,4 +13,6 @@ html {
 
 body {
   font-size: 1.6rem;
+  background-color: v.$VeryLightGrayBg;
+  color: v.$VeryDarkBlueText;
 }

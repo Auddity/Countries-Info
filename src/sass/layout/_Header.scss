@@ -1,9 +1,12 @@
+@use '../abstracts/variables' as v;
+
 .Header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 1.5rem;
   padding-block: 3rem;
+  box-shadow: 0 0 1rem v.$BoxShadowLightMode;
 
   &-title {
     font-size: 1.8rem;
@@ -12,6 +15,7 @@
   &-theme-toggle {
     display: flex;
     align-items: center;
+    cursor: pointer;
 
     .icon-container {
       transform: translateY(0.2rem);
