@@ -1,20 +1,24 @@
 import React from 'react';
 import '../sass/layout/_Header.scss';
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeTheme } from '../features/theme/themeSlice';
 import { BsMoon, BsMoonFill } from 'react-icons/bs';
 
 const Header = () => {
-  const [dark, setDark] = useState(false);
+  const dispatch = useDispatch();
+  const { isDark } = useSelector(store => store.theme);
+
+  console.log(isDark);
 
   return (
     <header className="Header">
       <h1 className="Header-title">Where in the world?</h1>
       <div
         className="Header-theme-toggle"
-        onClick={() => setDark(prev => !prev)}
+        onClick={() => dispatch(changeTheme())}
       >
         <div className="icon-container">
-          {dark ? <BsMoon /> : <BsMoonFill style={{ color: 'white' }} />}
+          {!isDark ? <BsMoon /> : <BsMoonFill style={{ color: 'white' }} />}
         </div>
         <p>Dark Mode</p>
       </div>
