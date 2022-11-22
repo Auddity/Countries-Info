@@ -8,6 +8,12 @@
   padding-block: 3rem;
   box-shadow: 0 0 1rem v.$BoxShadowLightMode;
 
+  &.dark {
+    background-color: v.$DarkBlue;
+    box-shadow: 0 0 1rem v.$VeryDarkBlueText;
+    color: white;
+  }
+
   &-title {
     font-size: 1.8rem;
   }
