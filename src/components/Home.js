@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import '../sass/layout/_Home.scss';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  const { isDark } = useSelector(store => store.theme);
 
-export default Home
+  return <main className={!isDark ? 'Home' : 'Home dark'}></main>;
+};
+
+export default Home;
