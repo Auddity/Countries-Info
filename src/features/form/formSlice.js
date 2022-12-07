@@ -9,8 +9,12 @@ const formSlice = createSlice({
   name: 'form',
   initialState,
   reducers: {
-    updateSearch: state => {},
-    updateSelected: state => {},
+    updateSearch: (state, action) => {
+      state.search = action.payload;
+    },
+    updateSelected: (state, action) => {
+      state.selected = action.payload;
+    },
   },
 });
 

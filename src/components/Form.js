@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch, updateSelected } from '../features/form/formSlice';
 
@@ -18,14 +18,21 @@ const Form = () => {
           id="search"
           placeholder="Search for a country..."
           value={search}
-          onChange={() => dispatch(updateSearch())}
+          onChange={e => dispatch(updateSearch(e.target.value))}
         />
       </div>
       <div className="Form-control">
-        <label htmlFor="">Filter by Region</label>
-        <select name="region" id="region">
+        <label htmlFor="region">Filter by Region</label>
+        <select
+          name="region"
+          id="region"
+          value={selected}
+          onChange={e => dispatch(updateSelected(e.target.value))}
+        >
           {/* Map through regions from api to produce options */}
-          <option value={selected}>temp</option>
+          <option value="">Filter by Region</option>
+          <option value="Belgium">Belgium</option>
+          <option value="United States">United States</option>
         </select>
       </div>
     </form>
