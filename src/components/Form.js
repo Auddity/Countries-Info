@@ -8,9 +8,10 @@ import '../sass/a11y/_a11y.scss';
 const Form = () => {
   const dispatch = useDispatch();
   const { search, selected } = useSelector(store => store.form);
+  const { isDark } = useSelector(store => store.theme);
 
   return (
-    <form className="Form">
+    <form className={!isDark ? 'Form' : 'Form dark'}>
       <div className="Form-control">
         <label htmlFor="search" className="offscreen">
           Search for A Country
