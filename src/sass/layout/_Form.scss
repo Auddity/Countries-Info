@@ -9,31 +9,57 @@
   padding-block: 2.5rem;
   color: v.$DarkGray;
 
-  &-control:first-child {
+  &-control {
     position: relative;
     width: 100%;
     padding-block-end: 4rem;
 
-    svg {
-      position: absolute;
-      left: 2.5rem;
-      top: 1.5rem;
-      transform: scale(1.4);
+    &.input {
+      svg {
+        position: absolute;
+        left: 2.5rem;
+        top: 1.5rem;
+        transform: scale(1.4);
+      }
     }
 
-    input[type='text'] {
+    input[type='text'],
+    select[name='region'] {
       width: 100%;
-      height: 100%;
+      letter-spacing: 0.5px;
+      background-color: white;
       padding-block: 1.5rem;
       padding-inline-start: 6rem;
       border-radius: 0.5rem;
       border: none;
-      letter-spacing: 0.5px;
       box-shadow: 0 0 1rem v.$BoxShadowLightMode;
 
       &:focus {
-        border: v.$DarkBlue;
         outline: 3px solid v.$DarkBlue;
+      }
+    }
+
+    &.select {
+      width: 60%;
+
+      svg {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        color: v.$VeryDarkBlueText;
+      }
+    }
+
+    select[name='region'] {
+      width: 100%;
+      padding-inline-start: 2rem;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
       }
     }
   }
@@ -42,14 +68,19 @@
   &.dark {
     color: white;
 
-    input[type='text'] {
+    input[type='text'],
+    select[name='region'] {
       background-color: v.$DarkBlue;
       color: inherit;
       box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.27);
+    }
 
-      &:focus {
-        outline: 2px solid v.$VeryLightGrayBg;
-      }
+    input[type='text']:focus {
+      outline: 2px solid v.$VeryLightGrayBg;
+    }
+
+    svg {
+      color: inherit;
     }
   }
 }

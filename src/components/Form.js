@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch, updateSelected } from '../features/form/formSlice';
 import { IoMdSearch } from 'react-icons/io';
+import { FiChevronDown } from 'react-icons/fi';
 import '../sass/layout/_Form.scss';
 import '../sass/a11y/_a11y.scss';
 
@@ -12,11 +13,11 @@ const Form = () => {
 
   return (
     <form className={!isDark ? 'Form' : 'Form dark'}>
-      <div className="Form-control">
+      <div className="Form-control input">
         <label htmlFor="search" className="offscreen">
           Search for A Country
         </label>
-        <IoMdSearch />
+        <IoMdSearch className="search-icon" />
         <input
           type="text"
           id="search"
@@ -25,10 +26,11 @@ const Form = () => {
           onChange={e => dispatch(updateSearch(e.target.value))}
         />
       </div>
-      <div className="Form-control">
+      <div className="Form-control select">
         <label htmlFor="region" className="offscreen">
           Filter by Region
         </label>
+        <FiChevronDown className="chevron" />
         <select
           name="region"
           id="region"
@@ -37,7 +39,7 @@ const Form = () => {
         >
           {/* Map through regions from api to produce options */}
           <option value="">Filter by Region</option>
-          <option value="Belgium">Belgium</option>
+          <option value="Belgium"></option>
           <option value="United States">United States</option>
         </select>
       </div>
