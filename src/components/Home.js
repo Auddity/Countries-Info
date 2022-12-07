@@ -7,7 +7,9 @@ const Home = () => {
   const { isDark } = useSelector(store => store.theme);
 
   return (
-    <main className={!isDark ? 'Home' : 'Home dark'}>{/* <Form /> */}</main>
+    <main className={!isDark ? 'Home' : 'Home dark'}>
+      <Form />
+    </main>
   );
 };
 
