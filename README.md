@@ -2,7 +2,7 @@
 
 This project is in production.
 
-Latest Update: 11/20/2022
+Latest Update: 12/7/2022
 
 ## Update Details
 
@@ -11,11 +11,11 @@ Latest Update: 11/20/2022
 - Component Files
 - Template Clean Up
 - Router Setup
+- Header Component
+- Form Component (in process)
 
 ## Future Updates
 
-- Header Component
-- Form Component
 - Main Component <Home />
 - Main Component <Country />
 - Border Link Component

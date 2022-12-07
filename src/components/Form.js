@@ -1,18 +1,21 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch, updateSelected } from '../features/form/formSlice';
+import { IoMdSearch } from 'react-icons/io';
+import '../sass/layout/_Form.scss';
+import '../sass/a11y/_a11y.scss';
 
 const Form = () => {
   const dispatch = useDispatch();
   const { search, selected } = useSelector(store => store.form);
 
-  console.log(search, selected);
   return (
     <form className="Form">
       <div className="Form-control">
-        <label htmlFor="search" className="a11y">
+        <label htmlFor="search" className="offscreen">
           Search for A Country
         </label>
+        <IoMdSearch />
         <input
           type="text"
           id="search"
@@ -22,7 +25,9 @@ const Form = () => {
         />
       </div>
       <div className="Form-control">
-        <label htmlFor="region">Filter by Region</label>
+        <label htmlFor="region" className="offscreen">
+          Filter by Region
+        </label>
         <select
           name="region"
           id="region"
