@@ -8,12 +8,30 @@
   box-shadow: v.$BoxShadowLightMode;
 
   .flag-container {
-    height: 8rem;
+    height: 16rem;
 
     .flag {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+    }
+  }
+
+  .info-container {
+    padding-block: 3rem;
+    padding-inline: 2rem;
+
+    h3 {
+      padding-block-end: 0.9rem;
+    }
+
+    p {
+      padding-block: 0.5rem;
+      font-weight: 600;
+
+      span {
+        font-weight: 400;
+      }
     }
   }
 }

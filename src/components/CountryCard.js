@@ -8,8 +8,8 @@ const CountryCard = () => {
       <div className="flag-container">
         <img src={img} alt="" className="flag" />
       </div>
-      <h3>Country Name</h3>
       <div className="info-container">
+        <h3>Country Name</h3>
         <p>
           Population: <span>499,300,555</span>
         </p>
