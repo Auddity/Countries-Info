@@ -35,4 +35,11 @@
       }
     }
   }
+
+  // Dark Theme
+  &.dark {
+    background-color: v.$DarkBlue;
+    box-shadow: v.$BoxShadowDarkMode;
+    color: white;
+  }
 }

@@ -1,6 +1,8 @@
 @use '../abstracts/variables' as v;
 
 .Home {
+  padding-block-end: 0.5rem;
+
   &.dark {
     background-color: v.$VeryDarkBlueBg;
   }

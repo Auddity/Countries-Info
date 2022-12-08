@@ -15,19 +15,17 @@ const Home = () => {
     dispatch(getCountries());
   }, [dispatch]);
 
-  console.log(countries, isLoading);
-
   return (
     <main className={!isDark ? 'Home' : 'Home dark'}>
-      <Form />
-
-      {/* Map over all countries */}
+      <Form isDark={isDark} />
       {isLoading ? (
         <div className="loading">
           <p>Loading Countries</p>
         </div>
       ) : (
-        countries.map(country => <CountryCard country={country} />)
+        countries.map(country => (
+          <CountryCard country={country} isDark={isDark} />
+        ))
       )}
     </main>
   );

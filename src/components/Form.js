@@ -6,10 +6,9 @@ import { FiChevronDown } from 'react-icons/fi';
 import '../sass/layout/_Form.scss';
 import '../sass/a11y/_a11y.scss';
 
-const Form = () => {
+const Form = ({ isDark }) => {
   const dispatch = useDispatch();
   const { search, selected } = useSelector(store => store.form);
-  const { isDark } = useSelector(store => store.theme);
 
   return (
     <form className={!isDark ? 'Form' : 'Form dark'}>
