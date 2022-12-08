@@ -6,12 +6,12 @@
   justify-content: space-between;
   padding-inline: 1.5rem;
   padding-block: 3rem;
-  box-shadow: 0 0 1.5rem v.$BoxShadowLightMode;
+  box-shadow: v.$BoxShadowLightMode;
 
   &.dark {
     position: relative;
     background-color: v.$DarkBlue;
-    box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.27);
+    box-shadow: v.$BoxShadowDarkMode;
     color: white;
     z-index: 10;
   }

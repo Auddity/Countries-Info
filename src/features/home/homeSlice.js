@@ -1,6 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  countries: [],
+  isLoading: true,
+};
+
+export const getCountries = createAsyncThunk('home/getCountries', () => {});
 
 const homeSlice = createSlice({
   name: 'home',

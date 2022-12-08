@@ -32,7 +32,7 @@
       padding-inline-start: 6rem;
       border-radius: 0.5rem;
       border: none;
-      box-shadow: 0 0 1rem v.$BoxShadowLightMode;
+      box-shadow: v.$BoxShadowLightMode;
 
       &:focus {
         outline: 3px solid v.$DarkBlue;
@@ -72,7 +72,7 @@
     select[name='region'] {
       background-color: v.$DarkBlue;
       color: inherit;
-      box-shadow: 0 0 1rem rgba($color: #000000, $alpha: 0.27);
+      box-shadow: v.$BoxShadowDarkMode;
     }
 
     input[type='text']:focus {

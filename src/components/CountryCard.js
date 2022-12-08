@@ -1,10 +1,12 @@
 import React from 'react';
+import img from './testImg.jpg';
+import '../sass/layout/_CountryCard.scss';
 
 const CountryCard = () => {
   return (
     <article className="CountryCard">
       <div className="flag-container">
-        <img src="" alt="" className="flag" />
+        <img src={img} alt="" className="flag" />
       </div>
       <h3>Country Name</h3>
       <div className="info-container">

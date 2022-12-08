@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as v;
+
+.CountryCard {
+  width: 75%;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: v.$BoxShadowLightMode;
+
+  .flag-container {
+    height: 8rem;
+
+    .flag {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
