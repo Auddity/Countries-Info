@@ -1,8 +1,6 @@
 @use '../abstracts/variables' as v;
 
 .Home {
-  height: calc(100vh - 8.4rem);
-
   &.dark {
     background-color: v.$VeryDarkBlueBg;
   }

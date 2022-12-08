@@ -22,7 +22,13 @@ const Home = () => {
       <Form />
 
       {/* Map over all countries */}
-      <CountryCard />
+      {isLoading ? (
+        <div className="loading">
+          <p>Loading Countries</p>
+        </div>
+      ) : (
+        countries.map(country => <CountryCard country={country} />)
+      )}
     </main>
   );
 };
