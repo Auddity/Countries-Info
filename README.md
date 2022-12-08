@@ -2,24 +2,21 @@
 
 This project is in production.
 
-Latest Update: 12/7/2022
+Latest Update: 12/8/2022
 
 ## Update Details
 
-- Created Slices
-- Router Imports
-- Component Files
-- Template Clean Up
-- Router Setup
+- Fetched Data
+  - ThunkApi
+- Main Component <Home />
 - Header Component
-- Form Component (in process)
+- Form Component (consider redesign of select/options)
+- Color Scheme (applied as components built)
 
 ## Future Updates
 
-- Main Component <Home />
 - Main Component <Country />
 - Border Link Component
-- Color Scheme
 
 ## Goals
 
@@ -37,4 +34,5 @@ Users will be able to:
 
 Building with ReacJS,
 Redux Toolkit,
-Router v6
+Router v6,
+Axios
