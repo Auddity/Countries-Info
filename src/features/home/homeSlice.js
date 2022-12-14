@@ -16,7 +16,7 @@ export const getCountries = createAsyncThunk(
       // console.log(resp.data);
       return resp.data;
     } catch (error) {
-      return thunkAPI.rejectWithValue(`Error: ${error}`);
+      return thunkAPI.rejectWithValue(`Error: ${error.response}`);
     }
   }
 );

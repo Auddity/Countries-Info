@@ -7,6 +7,12 @@
   overflow: hidden;
   border-radius: 0.5rem;
   box-shadow: v.$BoxShadowLightMode;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 3rem rgba($color: black, $alpha: 0.57);
+  }
 
   .flag-container {
     height: 16rem;
@@ -41,5 +47,9 @@
     background-color: v.$DarkBlue;
     box-shadow: v.$BoxShadowDarkMode;
     color: white;
+
+    &:hover {
+      box-shadow: 0 0 3rem rgba($color: black, $alpha: 0.57);
+    }
   }
 }

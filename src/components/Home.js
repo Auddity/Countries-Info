@@ -15,6 +15,8 @@ const Home = () => {
     dispatch(getCountries());
   }, [dispatch]);
 
+  console.log(countries);
+
   return (
     <main className={!isDark ? 'Home' : 'Home dark'}>
       <Form isDark={isDark} />
@@ -24,7 +26,11 @@ const Home = () => {
         </div>
       ) : (
         countries.map(country => (
-          <CountryCard country={country} isDark={isDark} />
+          <CountryCard
+            country={country}
+            isDark={isDark}
+            key={country.name.official}
+          />
         ))
       )}
     </main>

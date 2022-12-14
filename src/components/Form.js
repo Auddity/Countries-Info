@@ -37,6 +37,7 @@ const Form = ({ isDark }) => {
           onChange={e => dispatch(updateSelected(e.target.value))}
         >
           {/* Map through regions from api to produce options */}
+
           <option value="">Filter by Region</option>
           <option value="Belgium"></option>
           <option value="United States">United States</option>
