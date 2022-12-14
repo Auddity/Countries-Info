@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateSearch, updateSelected } from '../features/form/formSlice';
 import { IoMdSearch } from 'react-icons/io';
@@ -6,7 +5,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import '../sass/layout/_Form.scss';
 import '../sass/a11y/_a11y.scss';
 
-const Form = ({ isDark, countries }) => {
+const Form = ({ isDark }) => {
   const dispatch = useDispatch();
   const { search, selected } = useSelector(store => store.form);
 

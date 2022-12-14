@@ -2,24 +2,27 @@ import React from 'react';
 import '../sass/layout/_Home.scss';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCountries } from '../features/home/homeSlice';
+import { getCountries, getRegion } from '../features/home/homeSlice';
 import Form from '../components/Form';
 import CountryCard from './CountryCard';
 
 const Home = () => {
   const { isDark } = useSelector(store => store.theme);
   const { countries, isLoading } = useSelector(store => store.home);
+  const { selected } = useSelector(store => store.form);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCountries());
   }, [dispatch]);
 
-  console.log(countries);
+  useEffect(() => {
+    dispatch(getRegion(selected));
+  }, [dispatch, selected]);
 
   return (
     <main className={!isDark ? 'Home' : 'Home dark'}>
-      <Form isDark={isDark} countries={countries} />
+      <Form isDark={isDark} />
       {isLoading ? (
         <div className="loading">
           <p>Loading Countries</p>
