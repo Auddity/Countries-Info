@@ -6,7 +6,7 @@ import { FiChevronDown } from 'react-icons/fi';
 import '../sass/layout/_Form.scss';
 import '../sass/a11y/_a11y.scss';
 
-const Form = ({ isDark }) => {
+const Form = ({ isDark, countries }) => {
   const dispatch = useDispatch();
   const { search, selected } = useSelector(store => store.form);
 
@@ -36,11 +36,12 @@ const Form = ({ isDark }) => {
           value={selected}
           onChange={e => dispatch(updateSelected(e.target.value))}
         >
-          {/* Map through regions from api to produce options */}
-
           <option value="">Filter by Region</option>
-          <option value="Belgium"></option>
-          <option value="United States">United States</option>
+          <option value="africa">Africa</option>
+          <option value="americas">Americas</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
         </select>
       </div>
     </form>

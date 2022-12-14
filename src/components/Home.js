@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <main className={!isDark ? 'Home' : 'Home dark'}>
-      <Form isDark={isDark} />
+      <Form isDark={isDark} countries={countries} />
       {isLoading ? (
         <div className="loading">
           <p>Loading Countries</p>
