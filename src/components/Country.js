@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import '../sass/pages/_Country.scss';
 import img from './testImage.jpg';
 
 const Country = () => {
+  const { id } = useParams();
+
   return (
     <main className="Country">
       <section className="Country-link">
@@ -18,7 +20,7 @@ const Country = () => {
           <img className="flag" src={img} alt="" />
         </div>
         <div className="Country-info-container">
-          <h2>Country</h2>
+          <h2>{id}</h2>
           <p>
             Native Name: <span>name</span>
           </p>
