@@ -14,7 +14,6 @@ export const getCountries = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const resp = await axios(ALL_URL);
-      // console.log(resp.data);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(`Error: ${error.response}`);
@@ -26,11 +25,7 @@ export const getRegion = createAsyncThunk(
   'home/getRegion',
   async (region, thunkAPI) => {
     try {
-      // const selected = thunkAPI.updateSelected();
-      // console.log(selected);
-      console.log(region);
       const resp = await axios(`${REGION_BASE_URL}${region}`);
-      console.log(resp.data);
       return resp.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(`Error: ${error.response}`);
