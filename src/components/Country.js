@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Country = () => {
-  return (
-    <div>Country</div>
-  )
-}
+  return <main className="Country"></main>;
+};
 
-export default Country
+export default Country;

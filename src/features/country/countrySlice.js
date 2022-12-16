@@ -1,11 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const initialState = {};
+const SEARCH_URL = 'https://restcountries.com/v3.1/name/';
+
+const initialState = {
+  country: '',
+};
 
 const countrySlice = createSlice({
   name: 'country',
   initialState,
-  reducers: {},
+  // reducers: {},
+  extraReducers: {},
 });
 
 export default countrySlice.reducer;

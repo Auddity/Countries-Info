@@ -1,5 +1,5 @@
 import React from 'react';
-import '../sass/layout/_Home.scss';
+import '../sass/pages/_Home.scss';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCountries, getRegion } from '../features/home/homeSlice';
