@@ -1,11 +1,19 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { getCountry } from '../features/country/countrySlice';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import '../sass/pages/_Country.scss';
 import img from './testImage.jpg';
 
 const Country = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getCountry(id));
+  }, [dispatch, id]);
 
   return (
     <main className="Country">

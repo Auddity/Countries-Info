@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../sass/layout/_CountryCard.scss';
 
 const CountryCard = ({ country, isDark }) => {
-  const { id } = useParams();
   const formattedPop = new Intl.NumberFormat().format(country.population);
 
   return (
