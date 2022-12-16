@@ -1,4 +1,51 @@
 @use '../abstracts/variables' as v;
 
 .Country {
+  width: 85%;
+  margin-inline: auto;
+
+  &-link {
+    padding-block-start: 5rem;
+    padding-block-end: 7rem;
+
+    a {
+      padding-block: 0.8rem;
+      padding-inline: 2.5rem;
+      box-shadow: v.$BoxShadowLightMode;
+
+      svg {
+        margin-inline-end: 1rem;
+        transform: translateY(0.2rem);
+      }
+    }
+  }
+
+  &-info {
+    .img-container {
+      height: auto;
+
+      .flag {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-container {
+      padding-block: 4rem;
+
+      h2 {
+        padding-block-end: 2rem;
+      }
+
+      p {
+        font-weight: 600;
+        padding-block: 0.5rem;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
 }

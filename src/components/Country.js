@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
+import '../sass/pages/_Country.scss';
 import img from './testImage.jpg';
 
 const Country = () => {
   return (
     <main className="Country">
       <section className="Country-link">
-        <Link to="id">
+        <Link to="/">
           <HiArrowNarrowLeft />
           Back
         </Link>
       </section>
       <article className="Country-info">
         <div className="img-container">
-          <img src={img} alt="" />
+          <img className="flag" src={img} alt="" />
         </div>
         <div className="Country-info-container">
           <h2>Country</h2>

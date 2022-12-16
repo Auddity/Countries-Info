@@ -17,3 +17,8 @@ body {
   background-color: v.$VeryLightGrayBg;
   color: v.$VeryDarkBlueText;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
