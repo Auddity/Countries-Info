@@ -4,18 +4,20 @@ import axios from 'axios';
 const SEARCH_URL = 'https://restcountries.com/v3.1/name/';
 
 const initialState = {
-  // country: '',
+  country: [],
   isLoading: true,
 };
 
 export const getCountry = createAsyncThunk(
   'country/getCountry',
-  async (_, thunkAPI) => {
-    console.log(thunkAPI.getState().form);
-    const country = thunkAPI.getState().form.search;
+  async (id, thunkAPI) => {
+    // const country = thunkAPI.getState().form.search;
     try {
-      const resp = await axios(`${SEARCH_URL}${country}`);
-      return resp.data;
+      if (id) {
+        const resp = await axios(`${SEARCH_URL}${id}`);
+        console.log(resp.data);
+        return resp.data;
+      }
     } catch (error) {
       return thunkAPI.rejectWithValue(`Error: ${error.response}`);
     }

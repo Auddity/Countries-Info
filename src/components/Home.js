@@ -17,7 +17,7 @@ const Home = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    dispatch(getRegion(selected));
+    if (selected !== '') dispatch(getRegion(selected));
   }, [dispatch, selected]);
 
   return (
