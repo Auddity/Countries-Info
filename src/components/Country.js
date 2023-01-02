@@ -15,7 +15,7 @@ const Country = () => {
     dispatch(getCountry(id));
   }, [dispatch, id]);
 
-  console.log(country.languages);
+  console.log(country);
 
   const nativeNames = Object.values(country.name.nativeName);
   const nativeName = nativeNames[nativeNames.length - 1].official;
@@ -26,7 +26,7 @@ const Country = () => {
 
   const languages = Object.values(country.languages);
 
-  console.log(languages);
+  // console.log(languages);
 
   return (
     <main className="Country">
