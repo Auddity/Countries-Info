@@ -5,21 +5,28 @@ import { Link, useParams } from 'react-router-dom';
 import { getCountry } from '../features/country/countrySlice';
 import { HiArrowNarrowLeft } from 'react-icons/hi';
 import '../sass/pages/_Country.scss';
-import img from './testImage.jpg';
 
 const Country = () => {
   const { id } = useParams();
   const { country, isLoading } = useSelector(store => store.country);
   const dispatch = useDispatch();
-  const formattedPop = new Intl.NumberFormat().format(country[0].population);
-
-  const ObjEntries = Object.entries(country[0].currencies);
-
-  console.log(ObjEntries[0].name);
 
   useEffect(() => {
     dispatch(getCountry(id));
   }, [dispatch, id]);
+
+  console.log(country.languages);
+
+  const nativeNames = Object.values(country.name.nativeName);
+  const nativeName = nativeNames[nativeNames.length - 1].official;
+
+  const officialCurrencies = Object.values(country.currencies);
+  const officialCurrency =
+    officialCurrencies[officialCurrencies.length - 1].name;
+
+  const languages = Object.values(country.languages);
+
+  console.log(languages);
 
   return (
     <main className="Country">
@@ -37,34 +44,41 @@ const Country = () => {
           </section>
           <article className="Country-info">
             <div className="img-container">
-              <img className="flag" src={country[0].flags.png} alt="" />
+              <img className="flag" src={country.flags.png} alt="" />
             </div>
             <div className="Country-info-container">
               <h2>{id}</h2>
               <p>
-                {/* Native Name: <span>{country[0].name.nativeName}</span> */}
+                Native Name: <span>{nativeName}</span>
               </p>
               <p>
-                Population: <span>{formattedPop}</span>
+                Population:{' '}
+                <span>{Intl.NumberFormat().format(country.population)}</span>
               </p>
               <p>
-                Region: <span>{country[0].region}</span>
+                Region: <span>{country.region}</span>
               </p>
               <p>
-                Sub Region: <span>{country[0].subregion}</span>
+                Sub Region: <span>{country.subregion}</span>
               </p>
               <p>
-                Capital: <span>{country[0].capital}</span>
+                Capital: <span>{country.capital}</span>
               </p>
               <br></br>
               <p>
-                Top Level Domain: <span>{country[0].tld}</span>
+                Top Level Domain: <span>{country.tld}</span>
               </p>
               <p>
-                Currencies: <span>{country[0].currencies.name}</span>
+                Currencies: <span>{officialCurrency}</span>
               </p>
               <p>
-                Languages: <span>Croatian</span>
+                Languages:{' '}
+                {languages.map(lang => (
+                  <span>
+                    {lang}
+                    {','}{' '}
+                  </span>
+                ))}
               </p>
             </div>
           </article>

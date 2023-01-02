@@ -11,12 +11,10 @@ const initialState = {
 export const getCountry = createAsyncThunk(
   'country/getCountry',
   async (id, thunkAPI) => {
-    // const country = thunkAPI.getState().form.search;
     try {
       if (id) {
         const resp = await axios(`${SEARCH_URL}${id}`);
-        console.log(resp.data);
-        return resp.data;
+        return resp.data[0];
       }
     } catch (error) {
       return thunkAPI.rejectWithValue(`Error: ${error.response}`);
