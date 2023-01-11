@@ -11,22 +11,22 @@ const Country = () => {
   const { country, isLoading } = useSelector(store => store.country);
   const dispatch = useDispatch();
 
+  // console.log(id);
+
   useEffect(() => {
     dispatch(getCountry(id));
   }, [dispatch, id]);
 
-  console.log(country);
+  // console.log(country);
 
-  const nativeNames = Object.values(country.name.nativeName);
-  const nativeName = nativeNames[nativeNames.length - 1].official;
+  // const nativeNames = Object.values(country.name.nativeName);
+  // const nativeName = nativeNames[nativeNames.length - 1].official;
 
-  const officialCurrencies = Object.values(country.currencies);
-  const officialCurrency =
-    officialCurrencies[officialCurrencies.length - 1].name;
+  // const officialCurrencies = Object.values(country.currencies);
+  // const officialCurrency =
+  //   officialCurrencies[officialCurrencies.length - 1].name;
 
-  const languages = Object.values(country.languages);
-
-  // console.log(languages);
+  // const languages = Object.values(country.languages);
 
   return (
     <main className="Country">
@@ -49,7 +49,14 @@ const Country = () => {
             <div className="Country-info-container">
               <h2>{id}</h2>
               <p>
-                Native Name: <span>{nativeName}</span>
+                Native Name:{' '}
+                <span>
+                  {
+                    Object.values(country.name.nativeName)[
+                      Object.values(country.name.nativeName).length - 1
+                    ].official
+                  }
+                </span>
               </p>
               <p>
                 Population:{' '}
@@ -69,12 +76,19 @@ const Country = () => {
                 Top Level Domain: <span>{country.tld}</span>
               </p>
               <p>
-                Currencies: <span>{officialCurrency}</span>
+                Currencies:{' '}
+                <span>
+                  {
+                    Object.values(country.currencies)[
+                      Object.values(country.currencies).length - 1
+                    ].name
+                  }
+                </span>
               </p>
               <p>
                 Languages:{' '}
-                {languages.map(lang => (
-                  <span>
+                {Object.values(country.languages).map(lang => (
+                  <span key={lang}>
                     {lang}
                     {','}{' '}
                   </span>

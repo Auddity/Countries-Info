@@ -14,6 +14,7 @@ export const getCountry = createAsyncThunk(
     try {
       if (id) {
         const resp = await axios(`${SEARCH_URL}${id}`);
+        console.log(resp.data[0]);
         return resp.data[0];
       }
     } catch (error) {

@@ -46,8 +46,8 @@ const homeSlice = createSlice({
       state.countries = action.payload;
     },
     [getCountries.rejected]: (state, action) => {
-      console.log(action);
       state.isLoading = false;
+      console.log(action);
     },
     // ^ all, v region
     [getRegion.pending]: state => {

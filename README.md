@@ -2,20 +2,21 @@
 
 This project is in production.
 
-Latest Update: 12/8/2022
+Latest Update: 1/11/2023
 
 ## Update Details
 
+- Display Data on Country Page (tricky API response)
 - Fetched Data
   - ThunkApi
 - Main Component <Home />
 - Header Component
 - Form Component (consider redesign of select/options)
 - Color Scheme (applied as components built)
+- Main Component <Country />
 
 ## Future Updates
 
-- Main Component <Country />
 - Border Link Component
 
 ## Goals
