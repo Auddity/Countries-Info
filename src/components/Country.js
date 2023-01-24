@@ -16,17 +16,6 @@ const Country = () => {
     dispatch(getCountry(id));
   }, [dispatch, id]);
 
-  // console.log(country);
-
-  // const nativeNames = Object.values(country.name.nativeName);
-  // const nativeName = nativeNames[nativeNames.length - 1].official;
-
-  // const officialCurrencies = Object.values(country.currencies);
-  // const officialCurrency =
-  //   officialCurrencies[officialCurrencies.length - 1].name;
-
-  // const languages = Object.values(country.languages);
-
   return (
     <main className={!isDark ? 'Country' : 'Country dark'}>
       {isLoading ? (
@@ -88,11 +77,8 @@ const Country = () => {
               </p>
               <p>
                 Languages:{' '}
-                {Object.values(country.languages).map(lang => (
-                  <span key={lang}>
-                    {lang}
-                    {','}{' '}
-                  </span>
+                {Object.values(country.languages).map((lang, i) => (
+                  <span key={lang}>{(i ? ', ' : '') + lang}</span>
                 ))}
               </p>
             </div>

@@ -2,10 +2,11 @@
 
 This project is in production.
 
-Latest Update: 1/11/2023
+Latest Update: 1/24/2023
 
 ## Update Details
 
+- Minor styling/formatting fixes
 - Display Data on Country Page (tricky API response)
 - Fetched Data
   - ThunkApi
