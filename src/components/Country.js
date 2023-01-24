@@ -9,9 +9,8 @@ import '../sass/pages/_Country.scss';
 const Country = () => {
   const { id } = useParams();
   const { country, isLoading } = useSelector(store => store.country);
+  const { isDark } = useSelector(store => store.theme);
   const dispatch = useDispatch();
-
-  // console.log(id);
 
   useEffect(() => {
     dispatch(getCountry(id));
@@ -29,13 +28,15 @@ const Country = () => {
   // const languages = Object.values(country.languages);
 
   return (
-    <main className="Country">
+    <main className={!isDark ? 'Country' : 'Country dark'}>
       {isLoading ? (
-        <div className="loading">
-          <p>Loading Selected Country</p>
+        <div className="container">
+          <div className="loading">
+            <p>Loading Selected Country</p>
+          </div>
         </div>
       ) : (
-        <>
+        <div className="container">
           <section className="Country-link">
             <Link to="/">
               <HiArrowNarrowLeft />
@@ -102,7 +103,7 @@ const Country = () => {
               {/* border link component | MAP */}
             </div>
           </footer>
-        </>
+        </div>
       )}
     </main>
   );

@@ -1,8 +1,10 @@
 @use '../abstracts/variables' as v;
 
 .Country {
-  width: 85%;
-  margin-inline: auto;
+  .container {
+    width: 85%;
+    margin-inline: auto;
+  }
 
   &-link {
     padding-block-start: 5rem;
@@ -46,6 +48,15 @@
           font-weight: 400;
         }
       }
+    }
+  }
+
+  &.dark {
+    background-color: v.$VeryDarkBlueBg;
+    color: white;
+
+    .Country-link a {
+      box-shadow: v.$BoxShadowDarkMode;
     }
   }
 }
